@@ -106,7 +106,10 @@ object MeltingPot {
 	 * @param code Code
 	 */
 	def stripNewLines (code: String): String = {
-		val replaced = code.replaceAll(";\n", ";")
+		var replaced = code
+		replaced = replaced.replaceAll(";\n", ";")
+		replaced = replaced.replaceAll("\\{\n", "{")
+		replaced = replaced.replaceAll("}\n", "}")
 		return replaced
 	}
 	
